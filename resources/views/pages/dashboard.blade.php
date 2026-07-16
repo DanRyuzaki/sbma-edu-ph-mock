@@ -4,9 +4,6 @@
 
 @push('styles')
 <style>
-  /* Offsets each section so the sticky navbar doesn't cover the heading
-     when a nav link jumps here — without this, scroll-smooth still leaves
-     the target hidden behind the fixed navbar. */
   section[id] { scroll-margin-top: 76px; }
 </style>
 @endpush
@@ -427,9 +424,30 @@
       </div>
 
       <div id="admtab-panel-transferee" class="admission-tab-panel hidden">
-        <div class="border border-amber-200 bg-amber-50 rounded-xl p-6 text-sm text-slate-600">
-          Transferee requirements go here — share the specific documents needed per
-          grade level and this panel will be filled in to match the New Students layout.
+        <div class="rounded-xl overflow-hidden mb-6">
+          <img src="{{ asset('images/hero/transferees.jpg') }}" alt="Requirements for transferees" class="w-full h-auto object-contain rounded-xl">
+        </div>
+        @php
+          $transfereeRequirements = [
+            'Preschool' => ['PSA Birth Certificate', 'Form 138 (Report Card) (if any)'],
+            'Grade 1' => ['PSA Birth Certificate', 'ECCD Checklist', 'Form 138 (Report Card)'],
+            'Grades 2–6' => ['PSA Birth Certificate', 'Form 138 (Report Card)', 'Form 137', 'Good Moral Certificate'],
+            'Junior High School' => ['PSA Birth Certificate', 'Form 138 (Report Card)', 'Form 137', 'Good Moral Certificate'],
+          ];
+        @endphp
+        <div class="grid md:grid-cols-2 gap-5">
+          @foreach ($transfereeRequirements as $level => $docs)
+            <div class="border border-slate-100 rounded-xl p-6 bg-slate-50 hover:border-amber-300 hover:shadow-sm transition">
+              <h3 class="font-serif font-semibold text-slate-900 mb-3">{{ $level }}</h3>
+              <ul class="text-sm text-slate-600 space-y-1.5">
+                @foreach ($docs as $doc)
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-500 font-semibold shrink-0">&raquo;</span> {{ $doc }}
+                  </li>
+                @endforeach
+              </ul>
+            </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -447,8 +465,6 @@
         </p>
       </div>
 
-      {{-- Photo grid — real campus snapshots, first tile featured/wider, rest square,
-           each with a category tag revealed on hover. --}}
       @php
         $campusPhotos = [
           ['src' => 'https://sbma.edu.ph/assets/images/dsc0923-2-2000x1333-800x533.jpg', 'tag' => 'Cultural Arts', 'wide' => true],
@@ -472,7 +488,6 @@
         @endforeach
       </div>
 
-      {{-- Activity/program cards --}}
       @php
         $activities = [
           ['icon' => '🎭', 'bg' => 'bg-sky-100', 'title' => 'Arts & Cultural Performances', 'featured' => true,
@@ -514,9 +529,6 @@
       <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">News &amp; Events</p>
       <h2 class="font-serif text-slate-900 text-4xl font-bold mb-10">What's Happening at SBMA</h2>
 
-      {{-- This is built as a loop over $announcements so it's ready to swap for
-           a real database query once the Announcements admin module exists —
-           for now it's a single real announcement, hardcoded. --}}
       @php
         $announcements = [
           [
