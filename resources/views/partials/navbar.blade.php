@@ -5,20 +5,18 @@
     <a href="#hero" class="flex items-center gap-3 shrink-0">
       <img src="https://sbma.edu.ph/assets/images/logo-192x192.png" alt="SBMA logo" class="w-9 h-9 rounded-full">
       <span class="leading-tight">
-        <span class="block text-white font-semibold text-sm">St. Bernadette</span>
-        <span class="block text-amber-400 font-semibold text-xs tracking-wide">MONTESSORI ACADEMY</span>
+        <span class="block text-white font-sans font-semibold text-sm">St. Bernadette</span>
+        <span class="block text-amber-400 font-sans font-semibold text-xs tracking-wide">MONTESSORI ACADEMY</span>
       </span>
     </a>
 
     <div class="hidden lg:flex items-center gap-6 text-slate-200 text-sm font-medium">
-      <a href="#hero" class="hover:text-amber-400 transition">Home</a>
-      <a href="#mission" class="hover:text-amber-400 transition">About</a>
-      <a href="#programs" class="hover:text-amber-400 transition">Programs</a>
-      <a href="#curriculum" class="hover:text-amber-400 transition">Curriculum</a>
-      <a href="#admission-links" class="hover:text-amber-400 transition">Admissions</a>
-      <a href="#campus-life" class="hover:text-amber-400 transition">Campus Life</a>
-      <a href="#news-events" class="hover:text-amber-400 transition">News &amp; Events</a>
-      <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+      <a href="#hero" class="font-sans hover:text-amber-400 transition">Home</a>
+      <a href="#mission" class="font-sans hover:text-amber-400 transition">About</a>
+      <a href="#admission-links" class="font-sans hover:text-amber-400 transition">Admissions</a>
+      <a href="#campus-life" class="font-sans hover:text-amber-400 transition">Campus Life</a>
+      <a href="#news-events" class="font-sans hover:text-amber-400 transition">News &amp; Events</a>
+      <a href="#" class="font-sans hover:text-amber-400 transition" title="Coming soon">Contact</a>
     </div>
 
     <div class="hidden lg:flex items-center gap-3 shrink-0">
@@ -37,14 +35,12 @@
   </div>
 
   <div id="mobileMenu" class="hidden lg:hidden bg-[#0F1B33] border-t border-slate-700 px-6 py-3 space-y-1 text-slate-200 font-medium text-sm">
-    <a href="#hero" class="block py-2">Home</a>
-    <a href="#mission" class="block py-2">About</a>
-    <a href="#programs" class="block py-2">Programs</a>
-    <a href="#curriculum" class="block py-2">Curriculum</a>
-    <a href="#admission-links" class="block py-2">Admissions</a>
-    <a href="#campus-life" class="block py-2">Campus Life</a>
+    <a href="#hero" class="font-sans block py-2">Home</a>
+    <a href="#mission" class="font-sans block py-2">About</a>
+    <a href="#admission-links" class="font-sans block py-2">Admissions</a>
+    <a href="#campus-life" class="font-sans block py-2">Campus Life</a>
     <a href="#news-events" class="block py-2">News &amp; Events</a>
-    <a href="#contact" class="block py-2">Contact</a>
+    <a href="#" class="block py-2">Contact</a>
     <a href="https://forms.gle/eRmqmSohHzWHErkt6" target="_blank" class="block py-2 mt-2 bg-amber-500 text-[#0F1B33] font-semibold rounded-md text-center">Apply Now</a>
     <a href="/admin" class="block py-2 border border-slate-600 rounded-md text-center mt-1">Admin</a>
   </div>

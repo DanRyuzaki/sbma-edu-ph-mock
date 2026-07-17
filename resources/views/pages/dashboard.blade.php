@@ -57,7 +57,7 @@
     </button>
   </section>
 
-  {{-- ============ MISSION & VISION ============ --}}
+  {{-- ============ MISSION & VISION (About group — top) ============ --}}
   <section id="mission" class="bg-[#0F1B33] py-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
       <p class="text-amber-400 text-xs font-semibold tracking-widest uppercase mb-3">Our Purpose</p>
@@ -86,7 +86,114 @@
     </div>
   </section>
 
-  {{-- ============ ACADEMIC PROGRAMS (by age) ============ --}}
+  {{-- ============ HISTORY (About group — continued) ============ --}}
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Our History</p>
+      <h2 class="font-serif text-slate-900 text-4xl font-bold mb-12">For the Learning Community</h2>
+
+      @php
+        $milestones = [
+          ['date' => 'February 2011', 'bars' => ['bg-[#0F1B33]'],
+            'title' => 'A single building, three classrooms',
+            'desc' => "SBMA's first building opens on Isabel Avenue, Kapitan Pepe, Cabanatuan City — accommodating 34 pupils from Nursery to Grade 1, taught by 3 teachers."],
+          ['date' => 'Academic Year 2018', 'bars' => ['bg-[#0F1B33]', 'bg-sky-600'],
+            'title' => '750 students, 29 classrooms',
+            'desc' => "The school has grown to 51 teachers and 3 laboratory rooms, now offering Preschool through Junior High School under DepEd's K to 12 curriculum."],
+          ['date' => 'February 22, 2020', 'bars' => ['bg-[#0F1B33]', 'bg-sky-600', 'bg-amber-500'],
+            'title' => 'Recognized across Asia',
+            'desc' => 'Named The Outstanding Emerging School of the Year in Asia by the International Education Summit & Awards in Bangkok, Thailand.'],
+        ];
+      @endphp
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        @foreach ($milestones as $milestone)
+          <div>
+            <div class="flex gap-1 mb-4">
+              @foreach ($milestone['bars'] as $bar)
+                <span class="w-6 h-1.5 rounded-full {{ $bar }}"></span>
+              @endforeach
+            </div>
+            <p class="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-2">{{ strtoupper($milestone['date']) }}</p>
+            <h3 class="font-serif text-slate-900 text-lg font-bold mb-2">{{ $milestone['title'] }}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{{ $milestone['desc'] }}</p>
+          </div>
+        @endforeach
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+        <div class="relative w-full md:w-56 h-40 md:h-44 rounded-xl overflow-hidden shrink-0">
+          {{-- TODO: swap in the actual founder photo. Save it to public/images/hero/founder.jpg
+               — this filename is a placeholder until that asset is added. --}}
+          <img src="{{ asset('images/hero/founder.jpg') }}" alt="Dr. Edisteo B. Bernardez, Founder of SBMA" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F1B33]/90 via-[#0F1B33]/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3">
+            <p class="text-white text-[11px] italic leading-snug mb-1">
+              &ldquo;The St. Bernadette Montessori Academy is of the belief that education is a lifelong
+              process of man's development geared towards the improvement of the learning community
+              and its environment.&rdquo;
+            </p>
+            <p class="text-amber-400 text-[10px] font-semibold">Dr. Edisteo B. Bernardez</p>
+            <p class="text-slate-300 text-[10px]">Founder, SBMA</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Founded by an Educator, for Educators</p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            St. Bernadette Montessori Academy was founded in 2011 by
+            <span class="font-semibold text-slate-900">Dr. Edisteo B. Bernardez</span>,
+            an educator with more than fifty years in the classroom. What began as one building
+            with three classrooms has grown into a full Preschool-to-Junior-High-School campus,
+            still guided by the same founding commitment to discipline, capability, and character.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{-- ============ ADMISSIONS BANNER (Admissions group — top; quote + ongoing banner) ============ --}}
+  <section id="admission-links" class="bg-[#0F1B33] py-10 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center font-serif text-white text-3xl md:text-5xl font-semibold italic leading-snug max-w-3xl mx-auto mb-10">
+        &ldquo;Where Children's Intellectual Growth Accelerates and Practical Life Flourishes&rdquo;
+      </p>
+
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="{{ asset('images/hero/hero-4.jpg') }}" class="w-full h-64 md:h-72 object-cover">
+        <div class="absolute inset-0 bg-blue-700/70"></div>
+
+        <div class="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 px-8 md:px-16">
+          <div class="flex gap-4 md:gap-6">
+            @php
+              $values = [
+                ['label' => 'Service', 'color' => 'bg-red-500', 'icon' => '🤝'],
+                ['label' => 'Benevolence', 'color' => 'bg-emerald-500', 'icon' => '🤲'],
+                ['label' => 'Mastery', 'color' => 'bg-amber-500', 'icon' => '🎓'],
+                ['label' => 'Accuracy', 'color' => 'bg-sky-500', 'icon' => '🎯'],
+              ];
+            @endphp
+            @foreach ($values as $value)
+              <div class="flex flex-col items-center text-center">
+                <div class="w-14 h-14 rounded-full {{ $value['color'] }} flex items-center justify-center text-xl shadow-lg mb-2">
+                  {{ $value['icon'] }}
+                </div>
+                <p class="text-white text-[10px] font-semibold tracking-wide">{{ strtoupper($value['label']) }}</p>
+              </div>
+            @endforeach
+          </div>
+
+          <div class="text-center md:text-right">
+            <p class="text-white font-semibold text-sm">SBMA</p>
+            <p class="text-white font-serif text-2xl md:text-3xl font-bold leading-tight">Admissions</p>
+            <p class="text-amber-400 font-serif text-3xl md:text-4xl font-bold leading-tight">ONGOING</p>
+            <p class="text-white text-sm mt-1">S.Y. 2026-2027</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{-- ============ ACADEMIC PROGRAMS (Admissions group — continued) ============ --}}
   <section id="programs" class="bg-slate-50 py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
@@ -149,7 +256,7 @@
       </div>
 
       <div class="text-center mt-10">
-        <a href="#admission-links" class="inline-flex items-center gap-2 bg-[#0F1B33] hover:bg-[#182A4D] text-white font-semibold px-6 py-3 rounded-md transition">
+        <a href="#admission-guidance" class="inline-flex items-center gap-2 bg-[#0F1B33] hover:bg-[#182A4D] text-white font-semibold px-6 py-3 rounded-md transition">
           Start the Admission Process
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -157,7 +264,7 @@
     </div>
   </section>
 
-  {{-- ============ ENHANCED K-12 CURRICULUM (tabbed) ============ --}}
+  {{-- ============ ENHANCED K-12 CURRICULUM (Admissions group — continued, tabbed) ============ --}}
   <section id="curriculum" class="bg-white py-20 px-6" x-data="{}">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-4">
@@ -300,50 +407,8 @@
     </div>
   </section>
 
-  {{-- ============ ADMISSIONS BANNER (quote + ongoing banner) ============ --}}
-  <section class="bg-[#0F1B33] py-10 px-6">
-    <div class="max-w-6xl mx-auto">
-      <p class="text-center font-serif text-white text-3xl md:text-5xl font-semibold italic leading-snug max-w-3xl mx-auto mb-10">
-        &ldquo;Where Children's Intellectual Growth Accelerates and Practical Life Flourishes&rdquo;
-      </p>
-
-      <div class="relative rounded-2xl overflow-hidden">
-        <img src="{{ asset('images/hero/hero-4.jpg') }}" class="w-full h-64 md:h-72 object-cover">
-        <div class="absolute inset-0 bg-blue-700/70"></div>
-
-        <div class="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 px-8 md:px-16">
-          <div class="flex gap-4 md:gap-6">
-            @php
-              $values = [
-                ['label' => 'Service', 'color' => 'bg-red-500', 'icon' => '🤝'],
-                ['label' => 'Benevolence', 'color' => 'bg-emerald-500', 'icon' => '🤲'],
-                ['label' => 'Mastery', 'color' => 'bg-amber-500', 'icon' => '🎓'],
-                ['label' => 'Accuracy', 'color' => 'bg-sky-500', 'icon' => '🎯'],
-              ];
-            @endphp
-            @foreach ($values as $value)
-              <div class="flex flex-col items-center text-center">
-                <div class="w-14 h-14 rounded-full {{ $value['color'] }} flex items-center justify-center text-xl shadow-lg mb-2">
-                  {{ $value['icon'] }}
-                </div>
-                <p class="text-white text-[10px] font-semibold tracking-wide">{{ strtoupper($value['label']) }}</p>
-              </div>
-            @endforeach
-          </div>
-
-          <div class="text-center md:text-right">
-            <p class="text-white font-semibold text-sm">SBMA</p>
-            <p class="text-white font-serif text-2xl md:text-3xl font-bold leading-tight">Admissions</p>
-            <p class="text-amber-400 font-serif text-3xl md:text-4xl font-bold leading-tight">ONGOING</p>
-            <p class="text-white text-sm mt-1">S.Y. 2026-2027</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {{-- ============ ADMISSION LINKS & GUIDANCE ============ --}}
-  <section id="admission-links" class="bg-[#0F1B33] py-6 px-6 mt-0">
+  {{-- ============ ADMISSION LINKS & GUIDANCE (Admissions group — continued) ============ --}}
+  <section id="admission-guidance" class="bg-[#0F1B33] py-6 px-6 mt-0">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
         <p class="text-amber-400 text-xs font-semibold tracking-widest uppercase mb-3">Resources</p>
@@ -374,7 +439,7 @@
     </div>
   </section>
 
-  {{-- ============ ADMISSION REQUIREMENTS (tabbed) ============ --}}
+  {{-- ============ ADMISSION REQUIREMENTS (Admissions group — continued, tabbed) ============ --}}
   <section id="admission-requirements" class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
