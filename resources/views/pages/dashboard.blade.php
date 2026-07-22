@@ -43,9 +43,7 @@
         <a href="#mission" class="bg-amber-500 hover:bg-amber-400 text-[#0F1B33] font-semibold px-6 py-3 rounded-md transition">
           Our Philosophy
         </a>
-        <a href="#admission-links" class="border border-white/70 hover:border-white text-white font-semibold px-6 py-3 rounded-md transition">
-          Schedule a Visit
-        </a>
+
       </div>
     </div>
 
@@ -58,95 +56,112 @@
   </section>
 
   {{-- ============ MISSION & VISION (About group — top) ============ --}}
-  <section id="mission" class="bg-[#0F1B33] py-20 px-6">
+  <section id="mission" class="bg-white py-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <p class="text-amber-400 text-xs font-semibold tracking-widest uppercase mb-3">Our Purpose</p>
-      <h2 class="font-serif text-white text-4xl font-bold mb-12">Mission &amp; Vision</h2>
+      <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Our Purpose</p>
+      <h2 class="font-serif text-slate-900 text-4xl font-bold mb-12">Mission &amp; Vision</h2>
 
       <div class="grid md:grid-cols-2 gap-6 text-left">
-        <div class="bg-white/5 border border-white/10 rounded-xl p-8">
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4 text-lg">🎯</div>
-          <h3 class="font-serif text-white text-xl font-semibold mb-3">Mission</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            The St. Bernadette Montessori Academy pledges to commit itself in bringing about changes
-            in the learner's discipline, capabilities and skills under the aegis of
-            <span class="text-amber-400 font-medium">Service, Benevolence, Mastery and Accuracy</span>.
-          </p>
+        <div class="group relative bg-slate-50 border border-slate-100 hover:border-amber-300 rounded-2xl p-8 overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-amber-500"></div>
+          <span class="absolute -top-2 -right-1 font-serif text-slate-900/5 text-8xl font-bold leading-none select-none">01</span>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-5 text-2xl shadow-lg shadow-amber-500/20">🎯</div>
+            <h3 class="font-serif text-slate-900 text-2xl font-semibold mb-3">Mission</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              The St. Bernadette Montessori Academy pledges to commit itself in bringing about changes
+              in the learner's discipline, capabilities and skills under the aegis of
+              <span class="text-amber-600 font-medium">Service, Benevolence, Mastery and Accuracy</span>.
+            </p>
+          </div>
         </div>
-        <div class="bg-white/5 border border-white/10 rounded-xl p-8">
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4 text-lg">⭐</div>
-          <h3 class="font-serif text-white text-xl font-semibold mb-3">Vision</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            The St. Bernadette Montessori Academy envisions to cater and enhance opportunities for
-            intellectual and moral growth and development with an end in view of developing
-            <span class="text-amber-400 font-medium">basic knowledge, attitudes, and values</span>.
-          </p>
+        <div class="group relative bg-slate-50 border border-slate-100 hover:border-sky-300 rounded-2xl p-8 overflow-hidden transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 to-sky-500"></div>
+          <span class="absolute -top-2 -right-1 font-serif text-slate-900/5 text-8xl font-bold leading-none select-none">02</span>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center mb-5 text-2xl shadow-lg shadow-sky-500/20">⭐</div>
+            <h3 class="font-serif text-slate-900 text-2xl font-semibold mb-3">Vision</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              The St. Bernadette Montessori Academy envisions to cater and enhance opportunities for
+              intellectual and moral growth and development with an end in view of developing
+              <span class="text-amber-600 font-medium">basic knowledge, attitudes, and values</span>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  {{-- ============ HISTORY (About group — continued) ============ --}}
-  <section class="bg-white py-20 px-6">
+  {{-- ============ HISTORY / OUR STORY (About group — continued) ============ --}}
+  <section id="history" class="bg-white py-20 px-6">
     <div class="max-w-6xl mx-auto">
-      <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Our History</p>
-      <h2 class="font-serif text-slate-900 text-4xl font-bold mb-12">For the Learning Community</h2>
+      <div class="grid md:grid-cols-2 gap-10 items-start">
 
-      @php
-        $milestones = [
-          ['date' => 'February 2011', 'bars' => ['bg-[#0F1B33]'],
-            'title' => 'A single building, three classrooms',
-            'desc' => "SBMA's first building opens on Isabel Avenue, Kapitan Pepe, Cabanatuan City — accommodating 34 pupils from Nursery to Grade 1, taught by 3 teachers."],
-          ['date' => 'Academic Year 2018', 'bars' => ['bg-[#0F1B33]', 'bg-sky-600'],
-            'title' => '750 students, 29 classrooms',
-            'desc' => "The school has grown to 51 teachers and 3 laboratory rooms, now offering Preschool through Junior High School under DepEd's K to 12 curriculum."],
-          ['date' => 'February 22, 2020', 'bars' => ['bg-[#0F1B33]', 'bg-sky-600', 'bg-amber-500'],
-            'title' => 'Recognized across Asia',
-            'desc' => 'Named The Outstanding Emerging School of the Year in Asia by the International Education Summit & Awards in Bangkok, Thailand.'],
-        ];
-      @endphp
-
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-        @foreach ($milestones as $milestone)
-          <div>
-            <div class="flex gap-1 mb-4">
-              @foreach ($milestone['bars'] as $bar)
-                <span class="w-6 h-1.5 rounded-full {{ $bar }}"></span>
-              @endforeach
-            </div>
-            <p class="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-2">{{ strtoupper($milestone['date']) }}</p>
-            <h3 class="font-serif text-slate-900 text-lg font-bold mb-2">{{ $milestone['title'] }}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">{{ $milestone['desc'] }}</p>
+        {{-- Left column: event photo + founder quote card --}}
+        <div class="space-y-4">
+          <div class="rounded-xl overflow-hidden">
+            {{-- TODO: swap in the actual Moving-Up/Graduation ceremony photo.
+                 Save it to public/images/hero/moving-up-ceremony.jpg
+                 — this filename is a placeholder until that asset is added. --}}
+            <img src="{{ asset('images/hero/reward2022.jpg') }}" alt="2022" class="w-full h-64 md:h-72 object-cover">
           </div>
-        @endforeach
-      </div>
 
-      <div class="bg-slate-50 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
-        <div class="relative w-full md:w-56 h-40 md:h-44 rounded-xl overflow-hidden shrink-0">
-          {{-- TODO: swap in the actual founder photo. Save it to public/images/hero/founder.jpg
-               — this filename is a placeholder until that asset is added. --}}
-          <img src="{{ asset('images/hero/founder.jpg') }}" alt="Dr. Edisteo B. Bernardez, Founder of SBMA" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0F1B33]/90 via-[#0F1B33]/20 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3">
-            <p class="text-white text-[11px] italic leading-snug mb-1">
-              &ldquo;The St. Bernadette Montessori Academy is of the belief that education is a lifelong
-              process of man's development geared towards the improvement of the learning community
-              and its environment.&rdquo;
-            </p>
-            <p class="text-amber-400 text-[10px] font-semibold">Dr. Edisteo B. Bernardez</p>
-            <p class="text-slate-300 text-[10px]">Founder, SBMA</p>
+          <div class="relative rounded-xl overflow-hidden">
+            {{-- TODO: swap in the actual founder photo. Save it to public/images/hero/founder.jpg
+                 — this filename is a placeholder until that asset is added. --}}
+            <img src="{{ asset('images/hero/founder.jpg') }}" alt="Dr. Edisteo B. Bernardez, Founder of SBMA" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F1B33]/95 via-[#0F1B33]/40 to-transparent"></div>
+            <img src="https://sbma.edu.ph/assets/images/logo-192x192.png" alt="" class="absolute top-4 right-4 w-9 h-9 opacity-80">
           </div>
         </div>
+
+        {{-- Right column: story text + stat cards --}}
         <div>
-          <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Founded by an Educator, for Educators</p>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            St. Bernadette Montessori Academy was founded in 2011 by
-            <span class="font-semibold text-slate-900">Dr. Edisteo B. Bernardez</span>,
-            an educator with more than fifty years in the classroom. What began as one building
-            with three classrooms has grown into a full Preschool-to-Junior-High-School campus,
-            still guided by the same founding commitment to discipline, capability, and character.
-          </p>
+          <p class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Our Story</p>
+          <h2 class="font-serif text-slate-900 text-3xl md:text-4xl font-bold leading-snug mb-6">
+            Established in 2011,<br>Rooted in Excellence
+          </h2>
+
+          @php
+            $storyPoints = [
+              "The St. Bernadette Montessori Academy (SBMA) was established in 2011, founded by Dr. Edisteo B. Bernardez, an educator for over 50 years. SBMA is located at Isabel Avenue, Kapitan Pepe, Cabanatuan City in the province of Nueva Ecija.",
+              "In February 2011, SBMA's first building was built accommodating only thirty-four pupils from nursery to Grade 1 with only three classrooms facilitated by three teachers. Years gone by, the school has emerged and is continuously improving as an outstanding educational institution for and of the community.",
+              "In academic year 2018, SBMA had seven hundred fifty students, fifty-one teachers, twenty-nine classrooms, and three laboratory rooms. The school offers services to students of Preschool to Junior High School levels, implementing the K to 12 Curriculum of the Department of Education.",
+            ];
+          @endphp
+          <ul class="space-y-4 text-slate-600 text-sm leading-relaxed mb-8">
+            @foreach ($storyPoints as $point)
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500 font-semibold shrink-0 mt-0.5">&raquo;</span>
+                <span>{{ $point }}</span>
+              </li>
+            @endforeach
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 font-semibold shrink-0 mt-0.5">&raquo;</span>
+              <span>
+                On February 22, 2020, SBMA was awarded as
+                <span class="font-semibold text-slate-900">The Outstanding Emerging School of the Year in Asia</span>
+                by The International Education Summit &amp; Awards in Bangkok, Thailand.
+              </span>
+            </li>
+          </ul>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="bg-slate-50 rounded-xl p-4 text-center">
+              <p class="font-serif text-amber-500 text-2xl font-bold">2011</p>
+              <p class="text-slate-500 text-xs mt-1">Year Founded</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 text-center">
+              <p class="font-serif text-amber-500 text-2xl font-bold">750+</p>
+              <p class="text-slate-500 text-xs mt-1">Students (2018)</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 text-center">
+              <p class="font-serif text-amber-500 text-2xl font-bold">51+</p>
+              <p class="text-slate-500 text-xs mt-1">Teachers</p>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -627,6 +642,7 @@
     </div>
   </section>
 
+  
 @endsection
 
 @push('scripts')
